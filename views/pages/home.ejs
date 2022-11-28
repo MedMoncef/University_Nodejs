@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+    <%-include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="css/carousel.css">
+    <title>I.F.I.C</title>
+
+    </head>
+   <body>
+   <div class="container">
+      <video autoplay muted loop id="myVideo">
+         <source src="video/Hogwarts_Library.mp4" type="video/mp4">
+      </video>
+      
+   
+
+      <!-- ===============================Nav Start===================================== -->
+      <%-include('../partials/nav.ejs') %>
+      <!-- ===============================Nav End===================================== -->
+
+      <!-- ======================================================================================================= -->
+            <div style="height: 150px;"></div>
+      <!-- ======================================================================================================= -->
+
+      <!-- Logo image -->
+      <div class="Logo">
+         <img class="logo1 d-block w-100" src="image/Logo.png" alt="First slide" style="opacity: 70%;">
+         <h2 class="Textarea">
+            I.F.I.C vu le jour en 1993 procurant une ouverture au monde professionnel. L’accès à cet univers ‎professionnel se réalise en choisissant l’un des programmes de formation professionnelle proposés. ‎Ces parcours permettent aux apprenants d’accéder immédiatement aux domaines les plus demandés. ‎Nous visons l'excellence académique pour être perpétuellement classé au premier rang en Tunisie.‎ Situés en plein cœur de la ville, nos étudiants y découvrent l'effervescence de la vie estudiantine ‎multiculturelle et dynamique. L’édifice de l’IMSET est localisé tout près de plusieurs moyens de ‎transport, de divers restaurants et boutiques. ‎
+         </h2>
+      </div>
+
+      <!-- ======================================================================================================= -->
+      <!-- start of cards -->
+      <main class="page-content">
+         <div class="card">
+            <div class="content">
+               <a href="https://www.google.com/" style="text-decoration:none; color: white;">
+                  <h2 class="title">Pré-inscription</h2>
+                  <p class="copy">Pour effectuer une pré-inscription , veuillez remplir ce formulaire.</p>
+               </a>
+            </div>
+         </div>
+         <div class="card">
+            <div class="content">
+               <a href="https://www.google.com/" style="text-decoration:none; color: white;">
+                  <h2 class="title">Devis</h2>
+                  <p class="copy">Demandez votre devis, notre consultant va vous répondre dans un délai ne dépassant pas 48 H</p>
+               </a>
+            </div>
+         </div>
+         <div class="card">
+            <div class="content">
+               <a href="https://www.google.com/" style="text-decoration:none; color: white;">
+                  <h2 class="title">Inscription au Test</h2>
+                  <p class="copy">Test TOEIC®
+                     Test TOEFL-ITP®
+                     Test TOEFL® Junior
+                     Test TFI®
+                  </p>
+               </a>
+            </div>
+         </div>
+         <div class="card">
+            <div class="content">
+               <a href="https://www.google.com/" style="text-decoration:none; color: white;">
+                  <h2 class="title">Test de niveau</h2>
+                  <p class="copy">Testez vos compétences linguistiques en quelques clics.</p>
+               </a>
+            </div>
+         </div>
+      </main>
+   </div>
+      <!-- end of cards -->
+      <!-- ======================================================================================================= -->
+      <div style="height: 75px;"></div>
+      <!-- ======================================================================================================= -->
+      <!-- start of partners -->
+      <table width="100%">
+         <tbody>
+            <tr>
+               <td class="description">
+                  <div>
+                     <h1 style="color: White; text-transform: uppercase;">NOS partenaires</h1>
+                     <section class="col">
+                        <img class="Logo" src="image/aftercode.png" alt="">
+                     </section>
+                     <section class="col">
+                        <img class="Logo" src="image/imset.png" alt="">
+                     </section>
+                  </div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <!-- end of partners -->
+      <!-- ======================================================================================================= -->
+      <div style="height: 5px;"></div>
+      <!-- ======================================================================================================= -->
+      <!-- Footer start -->
+      <%-include('../partials/footer.ejs') %>
+      <!-- Footer End -->
+      <%-include('../partials/scripte.ejs') %>
+   </body>
+</html>
