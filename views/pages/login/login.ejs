@@ -6,23 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Form</title>
     <link rel="stylesheet" href="css/login.css">
+
+    <script type="text/javascript">
+		$(document).ready(function(){
+
+			$( "#form" ).submit(function(event) {
+				event.preventDefault();
+
+				$.ajax({
+					type: 'POST',
+					url: '/login',
+					data: $('#form').serialize(),
+					dataType: "json",
+					success: function(response){
+						//alert("a");
+						//console.log(response.Success);
+						$('#form')[0].reset();
+
+						document.getElementById("check").innerHTML=response.Success;
+         					//ADD THIS CODE
+         					setTimeout(function(){
+         						document.getElementById("check").innerHTML="";
+         					},3000);
+         					if (response.Success=="Success!") {
+         						document.getElementById("aa").click();
+         					};
+         				},
+         				error: function() {
+         				}
+         			})
+			});
+
+		});
+	</script>
 </head>
 <body>
     <div class="container">
         <div class="card">
             <h3>Sign Up</h3>
+            <form id="form" method="post">
             <div class="inputBox">
-                <input type="text" required="required">
-                <span>Username</span>
+                <input type="text" required="required" name="email">
+                <span>E-mail</span>
             </div>
 
             <div class="inputBox">
-                <input type="password" required="required">
+                <input type="password" required="required" name="password">
                 <span>Password</span>
             </div>
 
             <button>Enter</button>
-
+        </form>
         </div>
     </div>
 </body>

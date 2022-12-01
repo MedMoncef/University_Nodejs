@@ -23,7 +23,7 @@ import accelere from './routes/acceleres'
 import histoire from './routes/nhistoires'
 import mission from './routes/missions'
 import langue_main from './routes/langue_main'
-import inscriptions from './routes/inscription'
+import apple from './routes/user'
 import login from './routes/login'
 import bodyParser from 'body-parser'
 const app = express()
@@ -36,6 +36,10 @@ databaseConnexion()
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
+app.use(bodyParser.urlencoded({
+  extended: true,
+}));
+app.use(bodyParser.json());
 
 //enable middleware
 app.use(cors())
@@ -62,7 +66,7 @@ app.use('/',histoire)
 app.use('/',mission)
 app.use('/',communiques)
 app.use('/',langue_main)
-app.use('/',inscriptions)
+app.use('/',apple)
 app.use('/',login)
 
 //enable routes
