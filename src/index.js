@@ -4,8 +4,6 @@ import morgan from 'morgan'
 import mongoose from 'mongoose'
 import expressLayouts from 'express-ejs-layouts'
 import 'dotenv/config'
-const app = express()
-const port = process.env.PORT
 import databaseConnexion from './tools/databaseConnexion'
 import homes from './routes/homes'
 import langes from './routes/langes'
@@ -27,6 +25,9 @@ import mission from './routes/missions'
 import langue_main from './routes/langue_main'
 import inscriptions from './routes/inscription'
 import login from './routes/login'
+import bodyParser from 'body-parser'
+const app = express()
+const port = process.env.PORT
 
 //connect to mongodb database
 databaseConnexion()

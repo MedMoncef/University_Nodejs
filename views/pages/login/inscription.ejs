@@ -9,28 +9,30 @@
    </head>
    <body>
       <div class="container">
+         <form action="/inscription" method="post">
          <div class="card">
             <h3>Inscription</h3>
 
                   <div class="inputBox">
-                     <input type="text" required="required">
+                     <input type="text" required="required" name="username">
                      <span>Username</span>
                   </div>
                   <div class="inputBox">
-                     <input type="text" required="required">
+                     <input type="text" required="required" name="tel">
                      <span>Telephone</span>
                   </div>
 
                   <div class="inputBox">
-                     <input type="text" required="required">
+                     <input type="text" required="required" name="email">
                      <span>Adresse Mail</span>
                   </div>
                   <div class="inputBox">
-                     <input type="password" required="required">
+                     <input type="password" required="required" name="password">
                      <span>Password</span>
                   </div>
-            <button>Enter</button>
+            <button name="submitDetails">Enter</button>
          </div>
+      </form>
       </div>
    </body>
 </html>

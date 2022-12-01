@@ -1,7 +1,12 @@
 import Inscription from '../model/Inscription'
+import express from "express";
+import nodemailer from "nodemailer"
+import bcrypt from 'bcryptjs'
 
 const createInscription = async (req, res) => {
-    const inscriptions = await Inscription.create(req.body)
+        //recupérer les données du body
+    const { username, tel, email, password } = req.body
+    const inscriptions = await Inscription.create({username, tel, email, password})    
     return res.send(inscriptions)
 }
 
