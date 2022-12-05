@@ -30,6 +30,9 @@ import forget from './routes/forget'
 import bodyParser from 'body-parser'
 const app = express()
 const port = process.env.PORT
+import passport from 'passport'
+import LocalStrategy from 'passport-local'
+import passportLocalMongoose from 'passport-local-mongoose'
 
 //connect to mongodb database
 databaseConnexion()
