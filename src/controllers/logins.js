@@ -1,7 +1,7 @@
 import Login from '../model/User'
 
 const createLogin = async (req, res) => {
-    User.findOne({email:req.body.email},function(err,data){
+    Login.findOne({email:req.body.email},function(err,data){
 		if(data){
 			
 			if(data.password==req.body.password){
