@@ -1,7 +1,8 @@
-import Login from '../model/User'
+import User from '../model/User'
 
 const createLogin = async (req, res) => {
-    Login.findOne({email:req.body.email},function(err,data){
+	//console.log(req.body);
+	User.findOne({email:req.body.email},function(err,data){
 		if(data){
 			
 			if(data.password==req.body.password){
@@ -20,14 +21,8 @@ const createLogin = async (req, res) => {
 }
 
 const getAllLogin = async (req, res) => {
-    const logins = await Login.find()
-    return res.render("pages/login/login",{logins})
+    const users = await User.find()
+    return res.render("pages/login/login",{users})
 }
-
-/* const findFoodByUser = async (req, res) => {
-    console.log("params!!!!",req.params.userId);
-    const langes = await Lange.find({assignedTo: req.params.userId}).populate('assignedTo')
-    return res.send(langes)
-} */
 
 export { createLogin, getAllLogin }

@@ -1,4 +1,4 @@
-import Apple from '../model/User'
+import User from '../model/User'
 import express from "express";
 import nodemailer from "nodemailer"
 import bcrypt from 'bcryptjs'
@@ -31,7 +31,7 @@ const createForget = async (req, res) => {
 }
 
 const getAllForget = async (req, res) => {
-    const users = await Apple.find()
+    const users = await User.find()
     return res.render("pages/login/forget",{users})
 }
 

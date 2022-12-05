@@ -1,4 +1,4 @@
-import Apple from '../model/User'
+import User from '../model/User'
 import express from "express";
 import nodemailer from "nodemailer"
 import bcrypt from 'bcryptjs'
@@ -14,10 +14,10 @@ const getAllData = async (req, res) => {
 		console.log("data");
 		console.log(data);
 		if(!data){
-			res.redirect('/inscription');
+			res.redirect('/user');
 		}else{
 			//console.log("found");
-			return res.render('pages/login/data.ejs', {"name":data.username,"email":data.email});
+			return res.render('page/login/data', {"name":data.username,"email":data.email});
 		}
 	});
 }

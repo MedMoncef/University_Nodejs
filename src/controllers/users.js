@@ -1,10 +1,10 @@
-import Apple from '../model/User'
+import User from '../model/User'
 import express from "express";
 import nodemailer from "nodemailer"
 import bcrypt from 'bcryptjs'
 
 const createUser = async (req, res) => {
-    console.log(req.body);
+	console.log(req.body);
 	var personInfo = req.body;
 
 
@@ -13,20 +13,12 @@ const createUser = async (req, res) => {
 	} else {
 		if (personInfo.password == personInfo.passwordConf) {
 
-			Apple.findOne({email:personInfo.email},function(err,data){
+			User.findOne({email:personInfo.email},function(err,data){
 				if(!data){
 					var c;
-					Apple.findOne({},function(err,data){
+					User.findOne({},function(err,data){
 
-						if (data) {
-							console.log("if");
-							c = data.unique_id + 1;
-						}else{
-							c=1;
-						}
-
-						var newPerson = new Apple({
-							unique_id:c,
+						var newPerson = new User({
 							email:personInfo.email,
 							username: personInfo.username,
 							password: personInfo.password,
@@ -54,29 +46,8 @@ const createUser = async (req, res) => {
 }
 
 const getAllUser = async (req, res) => {
-    const users = await Apple.find()
+    const users = await User.find()
     return res.render("pages/login/register",{users})
 }
 
-const getAllUsers = async (req, res) => {
-    const users = await Apple.find()
-    return res.send(users)
-}
-
-/* const findFoodByUser = async (req, res) => {
-    console.log("params!!!!",req.params.userId);
-    const langes = await Lange.find({assignedTo: req.params.userId}).populate('assignedTo')
-    return res.send(langes)
-} */
-
-const deleteUser = async (req, res) => {
-    const users = await Apple.findByIdAndDelete(req.params.id);
-    return res.send(users);
-}
-
-const updateUser = async (req, res) => {
-    const users = await Apple.findByIdAndUpdate(req.params.id, req.body, {new:true});
-    return res.send(users);
-}
-
-export { createUser, getAllUser,getAllUsers,deleteUser,updateUser }
+export { createUser, getAllUser }
