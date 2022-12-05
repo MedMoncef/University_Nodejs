@@ -14,10 +14,10 @@ const getAllData = async (req, res) => {
 		console.log("data");
 		console.log(data);
 		if(!data){
-			res.redirect('/');
+			res.redirect('/inscription');
 		}else{
 			//console.log("found");
-			return res.render('data.ejs', {"name":data.username,"email":data.email});
+			return res.render('pages/login/data.ejs', {"name":data.username,"email":data.email});
 		}
 	});
 }

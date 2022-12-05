@@ -25,6 +25,8 @@ import mission from './routes/missions'
 import langue_main from './routes/langue_main'
 import apple from './routes/user'
 import login from './routes/login'
+import data from './routes/data'
+import forget from './routes/forget'
 import bodyParser from 'body-parser'
 const app = express()
 const port = process.env.PORT
@@ -68,6 +70,8 @@ app.use('/',communiques)
 app.use('/',langue_main)
 app.use('/',apple)
 app.use('/',login)
+app.use('/',data)
+app.use('/',forget)
 
 //enable routes
 
