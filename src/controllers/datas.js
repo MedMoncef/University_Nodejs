@@ -9,15 +9,14 @@ const createData = async (req, res) => {
 }
 
 const getAllData = async (req, res) => {
-	console.log("profile");
-	User.findOne({unique_id:req.session.userId},function(err,data){
+	User.findOne(function(err,data){
 		console.log("data");
 		console.log(data);
 		if(!data){
 			res.redirect('/user');
 		}else{
 			//console.log("found");
-			return res.render('page/login/data', {"name":data.username,"email":data.email});
+			return res.render("pages/login/data", {"name":data.username,"email":data.email});
 		}
 	});
 }

@@ -6,8 +6,9 @@ const createAccelere = async (req, res) => {
 }
 
 const getAllAcceleres = async (req, res) => {
-    const acceleres = await Accelere.find()
-    return res.render("pages/formation/formation_acc",{acceleres})
+    const offices = await Accelere.find({type: 'office'})
+    const programmations = await Accelere.find({type: 'programmation'})
+    return res.render("pages/formation/formation_acc",{offices,programmations})
 }
 
 const getAllAccelere = async (req, res) => {

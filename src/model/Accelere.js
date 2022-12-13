@@ -12,6 +12,10 @@ const AccelereSchema = new Schema({
     text7: String,
     text8: String,
     text9: String,
+    type: {
+        type: String,
+        enum: ['office', 'programmation']
+    }
 })
 
 const Accelere = mongoose.model("Accelere", AccelereSchema);

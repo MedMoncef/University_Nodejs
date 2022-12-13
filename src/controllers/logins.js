@@ -7,9 +7,8 @@ const createLogin = async (req, res) => {
 			
 			if(data.password==req.body.password){
 				//console.log("Done Login");
-				req.session.userId = data.unique_id;
 				//console.log(req.session.userId);
-				res.send({"Success":"Success!"});
+				res.redirect('/data');
 				
 			}else{
 				res.send({"Success":"Wrong password!"});
@@ -25,4 +24,4 @@ const getAllLogin = async (req, res) => {
     return res.render("pages/login/login",{users})
 }
 
-export { createLogin, getAllLogin }
+export { createLogin, getAllLogin}
