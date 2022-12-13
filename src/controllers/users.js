@@ -7,7 +7,6 @@ const createUser = async (req, res) => {
 	console.log(req.body);
 	var personInfo = req.body;
 
-
 	if(!personInfo.email || !personInfo.username || !personInfo.password || !personInfo.passwordConf){
 		res.send();
 	} else {
@@ -18,7 +17,15 @@ const createUser = async (req, res) => {
 					var c;
 					User.findOne({},function(err,data){
 
+						if (data) {
+							console.log("if");
+							c = data.unique_id + 1;
+						}else{
+							c=1;
+						}
+
 						var newPerson = new User({
+							unique_id:c,
 							email:personInfo.email,
 							username: personInfo.username,
 							password: personInfo.password,

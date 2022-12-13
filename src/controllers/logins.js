@@ -1,4 +1,5 @@
 import User from '../model/User'
+var session = require('express-session');
 
 const createLogin = async (req, res) => {
 	//console.log(req.body);
@@ -7,9 +8,9 @@ const createLogin = async (req, res) => {
 			
 			if(data.password==req.body.password){
 				//console.log("Done Login");
+				req.session.userId = data.unique_id;
 				//console.log(req.session.userId);
 				res.redirect('/data');
-				
 			}else{
 				res.send({"Success":"Wrong password!"});
 			}
@@ -24,4 +25,4 @@ const getAllLogin = async (req, res) => {
     return res.render("pages/login/login",{users})
 }
 
-export { createLogin, getAllLogin}
+export { createLogin, getAllLogin }
