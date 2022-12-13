@@ -10,7 +10,7 @@ const createLogin = async (req, res) => {
 				//console.log("Done Login");
 				req.session.userId = data.unique_id;
 				//console.log(req.session.userId);
-				res.redirect('/data');
+				res.send({"Success":"Success!"});
 			}else{
 				res.send({"Success":"Wrong password!"});
 			}

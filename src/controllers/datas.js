@@ -10,8 +10,6 @@ const createData = async (req, res) => {
 
 const getAllData = async (req, res) => {
 	User.findOne({unique_id:req.session.userId},function(err,data){
-		console.log("data");
-		console.log(data);
 		if(!data){
 			res.redirect('/user');
 		}else{
