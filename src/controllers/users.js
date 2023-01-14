@@ -40,7 +40,7 @@ const createUser = async (req, res) => {
 						});
 
 					}).sort({_id: -1}).limit(1);
-					res.send({"Success":"You are regestered,You can login now."});
+					res.redirect('/');
 				}else{
 					res.send({"Success":"Email is already used."});
 				}

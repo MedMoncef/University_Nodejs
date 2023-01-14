@@ -64,6 +64,10 @@
     color: white !important;
     list-style-type: circle;
   }
+
+  .nav__link:hover{
+    cursor: pointer;
+  }
   
   .nav__link:after {
     content: "";
