@@ -23,28 +23,35 @@ router.get("/IFIC",async (req, res)=>{
 router.get("/press",async (req, res)=>{
         let homes = await Home.find();
         return res.render("pages/navtel/press", {homes});
+
+
+
 })
-/* --- formation office --------*/
-router.get("/Access",async (req, res)=>{
+/* --- formation Prog --------*/
+router.get("/Initiation",async (req, res)=>{
         let homes = await Home.find();
-        return res.render("pages/formation/office/access", {homes});
+        return res.render("pages/formation/Prog/Initiation", {homes});
 })
-router.get("/Excel",async (req, res)=>{
+router.get("/Angular",async (req, res)=>{
         let homes = await Home.find();
-        return res.render("pages/formation/office/excel", {homes});
+        return res.render("pages/formation/Prog/Angular", {homes});
 })
-router.get("/Word",async (req, res)=>{
+router.get("/React",async (req, res)=>{
         let homes = await Home.find();
-        return res.render("pages/formation/office/word", {homes});
+        return res.render("pages/formation/Prog/React", {homes});
 })
-router.get("/Powerpoint",async (req, res)=>{
+router.get("/javascript",async (req, res)=>{
         let homes = await Home.find();
-        return res.render("pages/formation/office/Powerpoint", {homes});
+        return res.render("pages/formation/Prog/javascript", {homes});
 })
-router.get("/Outlook",async (req, res)=>{
+router.get("/Symfony",async (req, res)=>{
         let homes = await Home.find();
-        return res.render("pages/formation/office/outlook", {homes});
+        return res.render("pages/formation/Prog/Symfony", {homes});
 })
+
+
+
+
 /* --- formation programation -------*/
 router.get("/Initiation_C",async (req, res)=>{
         let homes = await Home.find();
