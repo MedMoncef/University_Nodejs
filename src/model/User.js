@@ -7,8 +7,6 @@ const userSchema = new Schema({
 	username: String,
 	password: String,
 	passwordConf: String,
-    diplome : String,
-    niveau: String,
     message: String,
 });
 
