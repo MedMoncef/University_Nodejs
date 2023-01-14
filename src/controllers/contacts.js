@@ -2,7 +2,7 @@ import Contact from '../model/Contact'
 
 const createContact = async (req, res) => {
     const contacts = await Contact.create(req.body)
-    return res.send(contacts)
+    return res.redirect('/');
 }
 
 const getAllContact = async (req, res) => {
