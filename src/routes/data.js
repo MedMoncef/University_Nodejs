@@ -1,6 +1,6 @@
 import express from "express";
 const router = express.Router();
-import { createData, getAllData,getAllDatas,deleteData,updateData} from '../controllers/logins';
+import { createData, getAllData,getAllDatas,deleteData,updateData } from '../controllers/logins';
 
 router.post("/data", createData)
 router.get("/data", getAllData)

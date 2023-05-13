@@ -69,12 +69,12 @@ body{
 
 
 .under{
-  text-decoration: underline;
+  text-decoration: none;
   color: rgb(255, 183, 94) !important;
 }
 
 .under:hover{
-  text-decoration: none;
+  text-decoration: underline;
   color: rgb(255, 162, 48) !important;
   cursor: pointer;
 }
@@ -105,10 +105,9 @@ body{
 }
 
 .serv h2{
-  font-size: 30px;
-  font-weight: 700;
-  text-align: left;
-  color: bisque;
+  font-size: 24px;
+  color: #333;
+  margin: 10px 0;
 }
 
 .story{
